@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+//////////////////////////////////////////////////////////////
+// Media queries breakpoints
+
+$screen-xs:  0;           //movil en bootstrap 480px !default;
+$screen-s:   544px;       //phablet default 544
+$screen-m:   768px;       // tablet default 768
+$screen-l:   992px;       // desktop
+$screen-xl:  1140px;      // destop-HD
+
+$breackpoint:   768px;    // navbar-breackpoint
+
+//////////////////////////////////////////////////////////////
+// Grid configuration
+
+$container-width: 1140px;      // ancho máximo contenedor
+$grid-default: 12;             // number of columns
+
+$gutter-hor: 15px;             // space beetwen columns
+$gutter-ver: 15px;
+
+// helpers grid
+$show-grid: false;
+$color-grid: cyan;
+$color-grid-padding: #da65d5;
+
+//////////////////////////////////////////////////////////////
+// colors
+//////////////////////////////////////////////////////////////
+$color-primary: #FF6B5A;
+$color-secondary: #68AFC1;
+$color-grey: #404B51;
+
+
+// color fonts
+$font-color-default: $color-grey;
+$font-color-headers: darken(#FF6B5A, 50%);
+
+// colors backgrounds
+$bg-color: #F5F4F4;
+
+$header-bg-color: #333333;
+$header-font-color: $font-color-default;
+
+$footer-bg-color: $color-primary;
+$footer-font-color: $bg-color;
+
+$copyright-bg-color: #5C4A52;
+$copyright-font-color: $bg-color;
+
+// links
+$link-color: $color-primary;
+$link-color-hover: desaturate(#160073, 10%);
+$link-decoration: none;
+$link-decoration-hover: none;
+
+//////////////////////////////////////////////////////////////
+// default navbar
+//////////////////////////////////////////////////////////////
+
+$navbar-bg: $color-primary;
+$navbar-link-color: $bg-color;
+$navbar-link-color-bg: $color-primary;
+$navbar-link-color-hover: $font-color-headers;
+$navbar-link-color-bg-hover: #68AFC1;
+$navbar-link-active-color: red;
+$navbar-link-active-color-bg: green;
+
+
+// layout parts
+$top-bar-bg-color: $color-grey;
+
+//////////////////////////////////////////////////////////////
+// external fonts
+//////////////////////////////////////////////////////////////
+
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+//////////////////////////////////////////////////////////////
+// fonts
+//////////////////////////////////////////////////////////////
+
+$font-family-sans-serif: 'Arimo', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$font-default: $font-family-sans-serif;
+$font-size-default: 16px;
+$line-height-default: 1.5;
+
+// headers
+$font-headers-weight: bold;
+$font-headers: $font-default;
+
+// espacio entre bloques
+$text-block-margin: 0 0 1rem 0;
+
+// blockquote
+$blocquote-padding: 1rem 2rem;
+$blocquote-decoration-border: 3px solid #ccc;
+
+// mark
+$mark-bg: #ff0;
+$mark-color: #000;
+
+
+
+//////////////////////////////////////////////////////////////
+// Animation
+//////////////////////////////////////////////////////////////
+
+$transition: all 0.3s ease 0s;
+
+//////////////////////////////////////////////////////////////
+// Graficos
+//////////////////////////////////////////////////////////////
+
+$border-radius: 6px; // bordes redondeados
+$text-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.25);
+$shadow-default: 1px, 1px, 3px, red;
+
+
+//////////////////////////////////////////////////////////////
+// Formularios
+//////////////////////////////////////////////////////////////
+
+// buttons
+$button-padding: 8px 20px;
+$button-padding-small: 5px 10px;
+$button-padding-big: 10px 35px;
+$button-border-color: #68AFC1;
+$button-color: $font-color-default;
+$button-bg: transparent;
+$button-border-color-hover: #68AFC1;
+$button-color-hover: $font-color-default;
+$button-bg-hover: #68AFC1;
+
+// buttons forms
+$button-form-padding: 5px 10px;
+$button-form-color: $button-color;
+$button-form-bg: $button-bg;
+$button-form-color-hover: $font-color-headers;
+$button-form-bg-hover: $button-bg-hover;
+
+// colors
+
+
+
+$form-font-family: $font-default;
+$form-font-size: $font-size-default;
+$form-font-color: $font-color-default;
+
+$form-input-bg-color: #fff;
+$form-input-border-size: 1px;
+$form-input-border-radius: $border-radius;
+$form-input-border-color: #ccc;
+$form-input-shadow: $shadow-default;
+$form-input-focus-shadow: #ccc;
+$form-input-focus-border-color: #ccc;
+
+$form-placeholder-color: #ccc;
+
+$form-fieldset-bg-color:#fff;
+$form-fieldset-border-color: #ccc;
+
+
+$form-error-color: red;
+$form-success-color: green;
+
+
+
+
+
+//////////////////////////////////////////////////////////////
+// Code
+//////////////////////////////////////////////////////////////
+
+$code-font-family: $font-family-monospace;
+$code-color: red;
+$code-kbd-bg-color: #ccc;

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+// general classes for quicki style
+// responsives helpers
+
+.img-resp{
+	width: 100%;
+	height: auto;
+}
+
+
+// text helpers
+
+.small{
+	@extend small;
+}
+
+.mark{
+	@extend mark;
+}
+
+//
+
+.small{
+	font-size: 80% !important;
+}
+
+.big{
+	font-size: 130% !important;
+}
+
+.block{
+	display: block !important;
+	width: 100%;
+}
+
+//
+
+.warning{}
+
+.success{}
+
+.danger{}
+
+
+////////////////////////
+// Banner
+////////////////////////
+.banner{
+	text-align: center;
+	padding: 50px 0;
+}
+
+///////////////////////
+// buttons
+///////////////////////
+
+.button{
+	@include button();
+}
+
+
+button.big,
+input[type="button"].big,
+input[type="submit"].big,
+input[type="reset"].big,
+.button.big{
+	padding: $button-padding-big;
+}
+
+button.small,
+input[type="button"].small,
+input[type="submit"].small,
+input[type="reset"].small,
+.button.small{
+	padding: $button-padding-small;
+}

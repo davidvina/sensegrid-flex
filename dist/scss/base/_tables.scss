@@ -1,0 +1,58 @@
+@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+
+
+
+$table-border-color: #ccc;
+$table-border-width: 1px;
+$table-align: top;
+$table-justify: left;
+$table-cell-padding: 10px;
+$table-bg-color: $bg-color;
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 100%;
+	background-color: $table-bg-color;
+
+	caption{
+		font-weight: bold;
+	}
+
+	th, td{
+		padding: $table-cell-padding;
+		vertical-align: $table-align;
+	    border-top: $table-border-width solid $table-border-color;
+   	    border-bottom: $table-border-width solid $table-border-color;
+   	    text-align: left;
+	}
+
+
+}
+
+
+
+// table classes
+
+.table-bordered {
+	border: $table-border-width solid $table-border-color;
+
+	th,
+	td {
+		border: $table-border-width solid $table-border-color;
+	}
+
+	thead {
+	th,
+	td {
+		border-bottom-width: (2 * $table-border-width);
+	}
+	}
+}
+
+
+.table-striped {
+	tbody tr:nth-of-type(odd) {
+		background-color: darken($table-bg-color, 10%);
+	}
+}

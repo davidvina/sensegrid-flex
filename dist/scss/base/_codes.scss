@@ -1,0 +1,32 @@
+@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+
+$code-font-family: $font-family-monospace;
+$code-color: red;
+$code-kbd-bg-color: #ccc;
+
+
+
+kbd, code, samp, .code {
+	font-family: $code-font-family;
+	color: $code-color;
+}
+
+kbd{
+	background-color: $code-kbd-bg-color;
+	display: inline-block;
+	padding: 0 5px;
+	border-radius: 4px;
+
+}
+
+code{
+	color: $code-color;
+}
+
+samp{
+
+}
+
+pre{
+	margin: $text-block-margin;
+}

@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+// calculate rem
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+
+// transitions
+@mixin transition($args: $transition) {
+  transition: $args;
+}
+
+// images
+
+@mixin img-responsive(){
+  width: 100%;
+  height: auto;
+}
+
+// bordes redondeados
+
+@mixin border-radius($radius: 6px){
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// mixin sombras
+@mixin box-shadow($value) {
+    -webkit-box-shadow:$value;
+    -moz-box-shadow:$value;
+    box-shadow:$value;
+}
+
+
+
+// sombras de texto
+
+@mixin text-shadow ($shadow: $text-shadow-default) {
+	text-shadow: $shadow;
+}
+
+
+// box-sizing
+
+@mixin box-sizing($value: border-box){
+-webkit-box-sizing: $value;
+-moz-box-sizing: $value;
+box-sizing: $value;
+}
+
+
+// placeholder
+
+@mixin placeholder {
+  .placeholder {
+      @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  ::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+// navigation menus
+
+// menu de navegacion horizontal
+@mixin nav-hor ($align: left, $reset: false){
+
+	text-align: $align;
+
+	.list-heading, ul, li{
+		display: inline-block;
+	}
+
+	ul, li{
+		@if $reset{
+			margin: 0;
+		}
+	}
+
+	li{
+		list-style: none;
+	}
+
+	a {
+		display: inline-block;
+	}
+}
+
+
+// menu de navegacion horizontal
+@mixin nav-ver ($align: left, $reset: false){
+
+  text-align: $align;
+
+	.list-heading{
+		display: block;
+	}
+
+	ul{
+		@if $reset{
+			margin: 0;
+		}
+
+	    a, li{
+	      display: block;
+	    }
+
+	    li{
+			@if $reset{
+				margin: 0;
+			}
+			list-style: none;
+		}
+	}
+}
+
+//
+@mixin nav-bar-ver ($align: left){
+
+  a{
+    border-bottom: 1px solid lighten($navbar-bg, 80%);
+    padding: $gap-ver $gap-hor;
+    color: $navbar-link-color;
+    background-color: $navbar-link-color-bg;
+    text-align: $align;
+
+    &:hover{
+      color: $navbar-link-color-hover;
+      background-color: $navbar-link-color-bg-hover;
+    }
+
+    &.active{
+      color: $navbar-link-active-color;
+      background-color: lighten($navbar-link-color-bg, 20%);
+      cursor: default;
+    }
+  }
+}
+
+
+// navbar
+@mixin nav-bar($align: center){
+  &{
+    background-color: $navbar-bg;
+  }
+
+  ul{
+
+    display: block;
+    /* necessari per eliminar espai entre anidats inline-blocks */
+    font-size: 0;
+    //@include container();
+    text-align: $align;
+    //padding: 0px $gap-hor;
+    margin: 0;
+
+    li{
+        display: block;
+        font-size: $font-size-default;
+        margin: 0;
+
+        a{
+           display: block;
+           border-bottom: 1px solid lighten($navbar-bg, 80%);
+        }
+
+        @media only screen and (min-width: $navbar-breackpoint) {
+            display: inline-block;
+
+            a{
+                border: none;
+                border-right: 1px solid lighten($navbar-bg, 80%);
+            }
+        }
+
+
+        &:last-child a{
+              border: none;
+        }
+
+
+    }
+  }
+
+  a{
+
+    padding: 10px;
+    color: $navbar-link-color;
+    background-color: $navbar-link-color-bg;
+
+    &:hover{
+      color: $navbar-link-color-hover;
+      background-color: $navbar-link-color-bg-hover;
+    }
+
+    &.active{
+      color: $navbar-link-active-color;
+      background-color: lighten($navbar-link-color-bg, 20%);
+      cursor: default;
+    }
+  }
+
+} // @mixin nav-bar
+
+
+
+// buttons
+@mixin button(){
+  //font-size: $font-size;
+  text-align: center;
+  display: inline-block;
+  padding: $button-padding;
+  color: $button-color;
+  background-color: $button-bg;
+  border: 2px solid $button-border-color;
+  @include border-radius($border-radius);
+  @include transition();
+  @include box-sizing();
+  cursor: pointer;
+  &:hover{
+    color: $button-color-hover;
+    background-color: $button-bg-hover;
+    border: 2px solid $button-border-color-hover;
+  }
+}

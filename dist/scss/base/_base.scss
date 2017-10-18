@@ -1,0 +1,163 @@
+/*
+***************************************************************
+  1.1 Reset
+***************************************************************
+*/
+
+@import 'reset';
+
+
+/*
+***************************************************************
+  1.2 Generales
+      estilo etiquetas generales por defecto
+***************************************************************
+*/
+
+
+html{
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-default;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font:{
+    family: $font-default;
+    weight: normal;
+    size: 1rem;
+  }
+  line-height: $line-height-default;
+  color: $font-color-default;
+  background-color: $bg-color;
+
+}
+
+a{
+  text-decoration: none;
+  color: $link-color;
+  &:hover{
+    color: $link-color-hover;
+  }
+  &:visited{
+    text-decoration: underline;
+  }
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  margin: $text-block-margin;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font:{
+    family: $font-headers;
+    weight: $font-headers-weight;
+  }
+  color:$font-color-headers;
+}
+
+h1{
+  font-size: 2.4rem;
+}
+
+h2{
+  font-size: 1.8rem;
+}
+
+h3{
+  font-size: 1.4rem;
+}
+
+h4{
+  font-size: 1.2rem;
+}
+
+h5{
+  font-size: 1rem;
+}
+
+h6{
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+
+address{
+  margin: $text-block-margin;
+}
+
+blockquote{
+  border-left: $blocquote-decoration-border;
+  padding: $blocquote-padding;
+  margin: $text-block-margin;
+}
+
+cite{
+
+}
+
+abbr{
+
+}
+
+
+/* inline elements */
+
+del, s{
+
+}
+
+ins, u{
+
+}
+
+small{
+  font-size: 80%;
+}
+
+mark, .mark{
+  background-color: $mark-bg;
+  color: $mark-color;
+}
+
+
+
+/*
+***************************************************************
+  1.4 Listas
+      estilo etiquetas generales por defecto
+****************************************************************
+*/
+@import 'lists';
+
+
+/*
+***************************************************************
+  1.3 Formularios
+      estilo etiquetas generales por defecto
+****************************************************************
+*/
+@import 'forms';
+
+/*
+***************************************************************
+  1.4 Tablas
+      estilo etiquetas generales por defecto
+****************************************************************
+*/
+@import 'tables';
+
+
+/*
+***************************************************************
+  1.4 Code
+      estilo etiquetas generales por defecto
+****************************************************************
+*/
+@import 'codes';

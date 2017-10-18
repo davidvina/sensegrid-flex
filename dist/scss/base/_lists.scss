@@ -1,0 +1,43 @@
+@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+
+
+$list-margin: 10px 0px;
+$list-dd-margin: 10px 0px 20px;
+
+dl, dt, dd, ol, ul, li {
+	margin: $list-margin;
+	padding: 0;
+}
+
+
+dl{
+	dt{
+		font-weight: bold;
+	}
+
+	dd{
+		margin: $list-dd-margin;
+	}
+
+	margin: $text-block-margin;
+}
+
+
+ul, ol{
+	list-style-position: inside;
+
+	li{
+		li{
+			margin-left: 20px;
+		}
+	}
+}
+
+
+.inline-list{
+
+}
+
+.alpha-list{
+
+}

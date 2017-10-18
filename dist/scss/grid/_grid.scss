@@ -1,0 +1,257 @@
+@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+
+// Inspirado en:
+//http://thesassway.com/intermediate/simple-grid-mixins
+
+
+
+// mixin que se deve incluir en el padre de las columnas
+// si queremos hacer una regilla fija con un ancho máximo
+@mixin container() {
+  width: 95%;
+  max-width: $container-width;
+  margin: auto;
+  clear: both;
+
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// breackpoints
+@mixin screen-xl {
+  @media only screen and (min-width: $screen-xl) {
+      @content;
+  }
+}
+
+@mixin screen-lg {
+  @media only screen and (min-width: $screen-l) {
+      @content;
+  }
+}
+
+@mixin screen-md {
+  @media only screen and (min-width: $screen-m) {
+      @content;
+  }
+}
+
+@mixin screen-sm {
+  @media only screen and (min-width: $screen-s) {
+      @content;
+  }
+}
+
+
+// Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
+// @include col($xl, $l, $m, $, $xs);
+// $grid: permite introducir un numero de columans especifica
+// $xl:  ancho columnas para $screen-xl
+// $l:   ancho para $screen-l
+// $m:   para $screen-m
+// $s:   para $screen-s
+// $xs:  para $screen-xs
+//
+// ejemplo uso:
+// @include col($xl:3, $l:3);
+//
+// si no se incluye el parametro el valor de ancho sera 100%
+
+
+@mixin col (
+      $grid: $grid-default,
+      $xl:  $grid,
+      $l:   $grid,
+      $m:   $grid,
+      $s:   $grid,
+      $xs:  $grid,
+      $padding: true
+    ) {
+
+    $width : percentage($xs/$grid);
+
+    position: relative;
+
+  	@if($xs != $grid){
+      width: percentage($xs/$grid);
+  		float: left;
+  	} @else {
+      // configuracio per defecte per dispositius mòvils
+      width: $width;
+    }
+
+
+
+
+    @if ($padding == true){
+      padding: $gutter-ver $gutter-hor;
+    }
+
+    // muestra rejilla
+    @if ($show-grid == true){
+      background-color: $color-grid !important;
+      outline: 1px solid #fff;
+    }
+
+    // només es crea la mediaquery si es diferent de 100% de l'ample
+
+    @if ($s != $grid) {
+      @media only screen and (min-width: $screen-s) {
+          width: percentage($s/$grid);
+          float: left;
+      }
+    }
+
+    @if ($m != $grid) {
+      @media only screen and (min-width: $screen-m) {
+          width: percentage($m/$grid);
+          float: left;
+      }
+    }
+
+    @if ($l != $grid) {
+      @media only screen and (min-width: $screen-l) {
+          width: percentage($l/$grid);
+          float: left;
+      }
+    }
+
+    @if ($xl != $grid) {
+      @media only screen and (min-width: $screen-xl) {
+          width: percentage($xl/$grid);
+          float: left;
+      }
+    }
+} // fin @mixin col
+
+
+
+// @mixin offset controla el margen izquierdo de las columnas
+// @include push($xl, $l, $m, $, $xs);
+@mixin offset (
+      $grid: $grid-default,
+      $xl:  0,
+      $l:   0,
+      $m:   0,
+      $s:   0,
+      $xs:  0
+      ){
+
+      // només es crea si s'ha passat parametres al mixin
+
+      @if ($xs != 0) {
+        margin-left: percentage($xs/$grid);
+      }
+
+      @if ($s != 0) {
+        @media only screen and (min-width: $screen-s) {
+            margin-left: percentage($s/$grid);
+        }
+      }
+
+      @if ($m != 0) {
+        @media only screen and (min-width: $screen-m) {
+            margin-left: percentage($m/$grid);
+        }
+      }
+
+      @if ($l != 0) {
+        @media only screen and (min-width: $screen-l) {
+            margin-left: percentage($l/$grid);
+        }
+      }
+
+      @if ($xl != 0) {
+        @media only screen and (min-width: $screen-xl) {
+            margin-left: percentage($xl/$grid);
+        }
+      }
+
+}
+
+
+// @mixin offset controla el margen izquierdo de las columnas
+@mixin pull (
+      $grid: $grid-default,
+      $xl:  0,
+      $l:   0,
+      $m:   0,
+      $s:   0,
+      $xs:  0
+      ){
+
+      // només es crea si s'ha passat parametres al mixin
+
+      @if ($xs != 0) {
+        right: percentage($xs/$grid);
+      }
+
+      @if ($s != 0) {
+        @media only screen and (min-width: $screen-s) {
+            margin-left: percentage($s/$grid);
+        }
+      }
+
+      @if ($m != 0) {
+        @media only screen and (min-width: $screen-m) {
+            right: percentage($m/$grid);
+        }
+      }
+
+      @if ($l != 0) {
+        @media only screen and (min-width: $screen-l) {
+            right: percentage($l/$grid);
+        }
+      }
+
+      @if ($xl != 0) {
+        @media only screen and (min-width: $screen-xl) {
+            right: percentage($xl/$grid);
+        }
+      }
+}
+
+// @mixin offset controla el margen izquierdo de las columnas
+@mixin push (
+      $grid: $grid-default,
+      $xl:  0,
+      $l:   0,
+      $m:   0,
+      $s:   0,
+      $xs:  0
+      ){
+
+      // només es crea si s'ha passat parametres al mixin
+
+      @if ($xs != 0) {
+        left: percentage($xs/$grid);
+      }
+
+      @if ($s != 0) {
+        @media only screen and (min-width: $screen-s) {
+            left: percentage($s/$grid);
+        }
+      }
+
+      @if ($m != 0) {
+        @media only screen and (min-width: $screen-m) {
+            left: percentage($m/$grid);
+        }
+      }
+
+      @if ($l != 0) {
+        @media only screen and (min-width: $screen-l) {
+            left: percentage($l/$grid);
+        }
+      }
+
+      @if ($xl != 0) {
+        @media only screen and (min-width: $screen-xl) {
+            left: percentage($xl/$grid);
+        }
+      }
+}
