@@ -5,7 +5,7 @@ Framework CSS made with SASS
 ## Getting Started
 
 To install SENSEGRID, put folder on your proyect an import _sensegrid.scss and _variables.scss on your main scss file.
-I recomend to overwrite _variables.scss. 
+I recomend to overwrite _variables.scss.
 
 ## Installing
 
@@ -33,8 +33,8 @@ dos tonterias
 @include col(numColums, padding, grid);
 ```
 
-
-
+## References
+http://thesassway.com/intermediate/simple-grid-mixins
 
 
 

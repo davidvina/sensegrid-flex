@@ -1,30 +1,40 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-$container-width: 1140px;      // ancho máximo contenedor
-$grid-default: 12;             // number of columns
-
-$gutter-hor: 15px;             // space beetwen columns
-$gutter-ver: 15px;
-
-// helpers grid
-$show-grid: false;
 
 // insert content on html for javascript comunication
-html:after{
-    content: '{"gutter":"'+$gutter-hor+'","grid":'+$grid-default+',"containerWidth":"'+$container-width+'"}';
-    display: none;
+::after {
+  content: '{"gutter":"' + $gutter-hor + '","grid":' + $grid-default + ',"containerWidth":"' + $container-width + '"}';
+  display: none;
 }
 
-#grid_guide{
-    @include container;
-    position: absolute;
 
-    .col{
-        @include col($xs:1, $padding: false);
-        box-sizing: border-box;
-        background-color: $color-grid;
-        border-left: $gutter-hor solid $color-grid-padding;
-        border-right: $gutter-hor solid $color-grid-padding;
-        text-align: center;
-    }
+body {
+  text-align: center;
+}
+
+.show-grid-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .15;
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.show-grid-container {
+  @include flex-container(true);
+  height: 100%;
+  //position: absolute;
+
+  .show-col {
+    width: percentage(1/12);
+    background-color: $color-grid;
+    border-left: $gutter-hor solid $color-grid-padding;
+    border-right: $gutter-hor solid $color-grid-padding;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: .6rem;
+  }
 }

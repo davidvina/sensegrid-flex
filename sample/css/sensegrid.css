@@ -265,7 +265,7 @@ blockquote {
   margin: 0 0 1rem 0; }
 
 /* inline elements */
-small, .small {
+small {
   font-size: 80%; }
 
 mark, .mark, .mark {
@@ -567,22 +567,26 @@ pre {
   margin: 0 0 1rem 0; }
 
 .img-resp {
-  width: 100%;
-  height: auto; }
-
-.small {
-  font-size: 80% !important; }
-
-.big {
-  font-size: 130% !important; }
-
-.block {
-  display: block !important;
+  height: auto;
   width: 100%; }
 
-.banner {
-  text-align: center;
-  padding: 50px 0; }
+.small {
+  font-size: 80%; }
+  .small.button, .smallbutton {
+    padding: 5px 10px; }
+  .smallinput[type='button'], .smallinput[type='reset'], .smallinput[type='submit'] {
+    padding: 5px 10px; }
+
+.big {
+  font-size: 130%; }
+  .big.button, .bigbutton {
+    padding: 10px 35px; }
+  .biginput[type='button'], .biginput[type='reset'], .biginput[type='submit'] {
+    padding: 10px 35px; }
+
+.block {
+  display: block;
+  width: 100%; }
 
 .button {
   text-align: center;
@@ -604,42 +608,37 @@ pre {
     background-color: #68AFC1;
     border: 2px solid #68AFC1; }
 
-button.big,
-input[type="button"].big,
-input[type="submit"].big,
-input[type="reset"].big,
-.button.big {
-  padding: 10px 35px; }
-
-button.small,
-input[type="button"].small,
-input[type="submit"].small,
-input[type="reset"].small,
-.button.small {
-  padding: 5px 10px; }
-
-html:after {
-  content: '{"gutter":"15px","grid":12,"containerWidth":"1140px"}';
+::after {
+  content: '{"gutter":"15px","grid":12,"containerWidth":"1380px"}';
   display: none; }
 
-#grid_guide {
-  width: 95%;
-  max-width: 1140px;
+body {
+  text-align: center; }
+
+.show-grid-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .15;
+  background-color: #ccc;
+  pointer-events: none; }
+
+.show-grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
-  clear: both;
-  position: absolute; }
-  #grid_guide:after {
-    content: "";
-    display: block;
-    clear: both; }
-  #grid_guide .col {
-    position: relative;
+  width: 95%;
+  height: 100%; }
+  .show-grid-container .show-col {
     width: 8.33333%;
-    float: left;
-    box-sizing: border-box;
     background-color: cyan;
     border-left: 15px solid #da65d5;
     border-right: 15px solid #da65d5;
-    text-align: center; }
+    box-sizing: border-box;
+    text-align: center;
+    font-size: .6rem; }
 
 /*# sourceMappingURL=sensegrid.css.map */

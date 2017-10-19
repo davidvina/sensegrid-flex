@@ -27,27 +27,30 @@ function showSenseGridData() {
 }
 
 // create elements
-function createGrid() {
+function showGrid() {
 
   var senseGridData = getSenseGridData();
 
-  var containerGrid = document.createElement('DIV');
+  var wrapperGrid = document.createElement('DIV');
+  wrapperGrid.setAttribute('class', 'show-grid-wrapper');
+  wrapperGrid.setAttribute('id', 'show-grid');
 
-  // add atributes
-  containerGrid.setAttribute('id', 'grid_guide');
-  containerGrid.setAttribute('class', 'btn_class');
+  var containerGrid = document.createElement('DIV');
+  containerGrid.setAttribute('class', 'show-grid-container');
+  wrapperGrid.appendChild(containerGrid);
 
   for (var i = 0; i < senseGridData.grid; i++) {
 
     // append elements to contaner
     var column = document.createElement('DIV');
-    column.setAttribute('id', 'col_' + i + 1);
-    column.setAttribute('class', 'col');
+
+    //column.setAttribute('id', 'col_' + (i + 1));
+    column.setAttribute('class', 'show-col');
     column.appendChild(document.createTextNode(i + 1));
 
     containerGrid.appendChild(column);
 
   }
 
-  document.body.appendChild(containerGrid);
+  document.body.appendChild(wrapperGrid);
 }

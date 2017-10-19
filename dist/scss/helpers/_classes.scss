@@ -1,77 +1,57 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 // general classes for quicki style
-// responsives helpers
 
-.img-resp{
-	width: 100%;
-	height: auto;
+// responsive images helpers
+.img-resp {
+  height: auto;
+  width: 100%;
 }
-
 
 // text helpers
+.small {
+  font-size: 80%;
 
-.small{
-	@extend small;
+  &.button,
+  &button {
+    padding: $button-padding-small;
+  }
+
+  &input {
+    &[type='button'],
+    &[type='reset'],
+    &[type='submit'] {
+      padding: $button-padding-small;
+    }
+  }
 }
 
-.mark{
-	@extend mark;
+.big {
+  font-size: 130%;
+
+  &.button,
+  &button {
+    padding: $button-padding-big;
+  }
+
+  &input {
+    &[type='button'],
+    &[type='reset'],
+    &[type='submit'] {
+      padding: $button-padding-big;
+    }
+  }
 }
 
-//
-
-.small{
-	font-size: 80% !important;
+.mark {
+  @extend mark;
 }
 
-.big{
-	font-size: 130% !important;
+.block {
+  display: block;
+  width: 100%;
 }
 
-.block{
-	display: block !important;
-	width: 100%;
-}
-
-//
-
-.warning{}
-
-.success{}
-
-.danger{}
-
-
-////////////////////////
-// Banner
-////////////////////////
-.banner{
-	text-align: center;
-	padding: 50px 0;
-}
-
-///////////////////////
-// buttons
-///////////////////////
-
-.button{
-	@include button();
-}
-
-
-button.big,
-input[type="button"].big,
-input[type="submit"].big,
-input[type="reset"].big,
-.button.big{
-	padding: $button-padding-big;
-}
-
-button.small,
-input[type="button"].small,
-input[type="submit"].small,
-input[type="reset"].small,
-.button.small{
-	padding: $button-padding-small;
+.button {
+  @include button;
 }

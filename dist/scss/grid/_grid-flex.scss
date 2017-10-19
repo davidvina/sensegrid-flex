@@ -2,49 +2,20 @@
 
 // generates center container with fixed width
 // this must be the parent of columns
-@mixin container {
-  clear: both;
+
+
+@mixin flex-container($full-width: false) {
+  @if not $full-width {
+    max-width: $container-width;
+  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
-  max-width: $container-width;
   width: 95%;
-
-  &::after {
-    clear: both;
-    content: '';
-    display: block;
-  }
 }
 
-// breackpoints mediaqueries
-@mixin screen-xl {
-  @media only screen and (min-width: $screen-xl) {
-    @content;
-  }
-}
 
-@mixin screen-l {
-  @media only screen and (min-width: $screen-l) {
-    @content;
-  }
-}
-
-@mixin screen-m {
-  @media only screen and (min-width: $screen-m) {
-    @content;
-  }
-}
-
-@mixin screen-s {
-  @media only screen and (min-width: $screen-s) {
-    @content;
-  }
-}
-
-@mixin screen-xs {
-  @media only screen and (min-width: $screen-xs) {
-    @content;
-  }
-}
 
 // Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
 // @include col($xl, $l, $m, $, $xs);
