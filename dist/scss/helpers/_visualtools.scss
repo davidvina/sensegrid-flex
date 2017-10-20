@@ -38,3 +38,47 @@ body {
     font-size: .6rem;
   }
 }
+
+body.show-media-queries {
+  &::before {
+    content: 'screen-xxs';
+    position: fixed;
+    padding: 5px 7px;
+    bottom: 0;
+    left: 0;
+    font-size: .8rem;
+    z-index: 2000;
+    pointer-events: none;
+    color: #fff;
+
+
+    @include screen-xs {
+      content: 'screen-xs: ' + $screen-xs;
+      background-color: #204db1;
+    }
+
+    @include screen-s {
+      content: 'screen-s: ' + $screen-s;
+      background-color: green;
+    }
+    @include screen-m {
+      content: 'screen-m: ' + $screen-m;
+        background-color: golden;
+    }
+    @include screen-l {
+      content: 'screen-l: ' + $screen-l;
+      background-color: orange;
+    }
+
+    @include screen-xl {
+      content: 'screen-xl: ' + $screen-xl;
+      background-color: red;
+    }
+  }
+}
+
+$screen-xs:  0;       // movil en bootstrap 480px !default;
+$screen-s:   544px;       // phablet default 544
+$screen-m:   768px;       // tablet default 768
+$screen-l:   992px;       // desktop
+$screen-xl:  1140px;

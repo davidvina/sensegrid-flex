@@ -641,4 +641,35 @@ body {
     text-align: center;
     font-size: .6rem; }
 
+body.show-media-queries::before {
+  content: 'screen-xxs';
+  position: fixed;
+  padding: 5px 7px;
+  bottom: 0;
+  left: 0;
+  font-size: .8rem;
+  z-index: 2000;
+  pointer-events: none;
+  color: #fff; }
+  @media only screen and (min-width: 0px) {
+    body.show-media-queries::before {
+      content: "screen-xs: 0px";
+      background-color: #204db1; } }
+  @media only screen and (min-width: 544px) {
+    body.show-media-queries::before {
+      content: "screen-s: 544px";
+      background-color: green; } }
+  @media only screen and (min-width: 768px) {
+    body.show-media-queries::before {
+      content: "screen-m: 768px";
+      background-color: golden; } }
+  @media only screen and (min-width: 992px) {
+    body.show-media-queries::before {
+      content: "screen-l: 992px";
+      background-color: orange; } }
+  @media only screen and (min-width: 1140px) {
+    body.show-media-queries::before {
+      content: "screen-xl: 1140px";
+      background-color: red; } }
+
 /*# sourceMappingURL=sensegrid.css.map */

@@ -54,3 +54,14 @@ function showGrid() {
 
   document.body.appendChild(wrapperGrid);
 }
+
+function showMediaQueries() {
+  var body = document.body;
+  if (!body.classList.contains('show-media-queries')) {
+    body.className = 'show-media-queries';
+    return 'Show media query breackpoints';
+  } else {
+    body.classList.remove('show-media-queries');
+    return 'Hide media query breackpoints';
+  }
+};
