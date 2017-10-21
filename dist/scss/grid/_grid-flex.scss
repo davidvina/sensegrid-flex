@@ -1,9 +1,10 @@
 @charset 'UTF-8';
 
-// generates center container with fixed width
+//
 // this must be the parent of columns
 
-
+/// @output Generates center container with fixed width
+/// @param {boolean} $full-width [false] - if true the container si full width
 @mixin flex-container($full-width: false) {
   @if not $full-width {
     max-width: $container-width;

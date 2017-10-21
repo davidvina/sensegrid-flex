@@ -1,4 +1,11 @@
-@charset "UTF-8";
+@charset 'UTF-8';
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group API
+/// @author David Vinagre Cerezo
+////
 
 @import 'variables';               // variable folder override for custom
 @import 'grid/grid';               // grid sysytem

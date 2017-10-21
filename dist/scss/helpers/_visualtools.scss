@@ -2,11 +2,12 @@
 
 
 // insert content on html for javascript comunication
-::after {
-  content: '{"gutter":"' + $gutter-hor + '","grid":' + $grid-default + ',"containerWidth":"' + $container-width + '"}';
-  display: none;
+html {
+  &:after {
+    content: '{"gutter":"' + $gutter-hor + '","grid":' + $grid-default + ',"containerWidth":"' + $container-width + '"}';
+    display: none;
+  }
 }
-
 
 body {
   text-align: center;
@@ -50,35 +51,30 @@ body.show-media-queries {
     z-index: 2000;
     pointer-events: none;
     color: #fff;
+    background-color: #204db1;
 
 
     @include screen-xs {
       content: 'screen-xs: ' + $screen-xs;
-      background-color: #204db1;
+      background-color: #2097b1;
     }
 
     @include screen-s {
       content: 'screen-s: ' + $screen-s;
-      background-color: green;
+      background-color: #01e85e;
     }
     @include screen-m {
       content: 'screen-m: ' + $screen-m;
-        background-color: golden;
+      background-color: #9bfb74;
     }
     @include screen-l {
       content: 'screen-l: ' + $screen-l;
-      background-color: orange;
+      background-color: #d0b25a;
     }
 
     @include screen-xl {
       content: 'screen-xl: ' + $screen-xl;
-      background-color: red;
+      background-color: #d43e3e;
     }
   }
 }
-
-$screen-xs:  0;       // movil en bootstrap 480px !default;
-$screen-s:   544px;       // phablet default 544
-$screen-m:   768px;       // tablet default 768
-$screen-l:   992px;       // desktop
-$screen-xl:  1140px;

@@ -1,52 +1,45 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-//////////////////////////////////////////////////////////////
 // Media queries breakpoints
-
-$screen-xs:  0px;       // movil en bootstrap 480px !default;
+$screen-xs:  0;           // movil en bootstrap 480px !default;
 $screen-s:   544px;       // phablet default 544
 $screen-m:   768px;       // tablet default 768
 $screen-l:   992px;       // desktop
 $screen-xl:  1140px;      // destop-HD
 
-$breackpoint:   768px;    // navbar-breackpoint
+// navbar-breackpoint
+$breackpoint:   768px;
 
-//////////////////////////////////////////////////////////////
 // Grid configuration
-
-$container-width: 1380px;      // ancho máximo contenedor
+$container-width: 1380px;      // max-width of container
 $grid-default: 12;             // number of columns
-
 $gutter-hor: 15px;             // space beetwen columns
-$gutter-ver: 15px;
+$gutter-ver: 15px;             // space beetwen rows
 
 // helpers grid
 $show-grid: false;
-$color-grid: cyan;
+$color-grid: #00ffe8;
 $color-grid-padding: #da65d5;
 
-//////////////////////////////////////////////////////////////
 // colors
-//////////////////////////////////////////////////////////////
-$color-primary: #FF6B5A;
-$color-secondary: #68AFC1;
-$color-grey: #404B51;
-
+$color-primary: #ff6b5a;
+$color-secondary: #68afc1;
+$color-grey: #404b51;
 
 // color fonts
 $font-color-default: $color-grey;
-$font-color-headers: darken(#FF6B5A, 50%);
+$font-color-headers: darken(#ff6b5a, 50%);
 
 // colors backgrounds
-$bg-color: #F5F4F4;
+$bg-color: #f5f4f4;
 
-$header-bg-color: #333333;
+$header-bg-color: #333;
 $header-font-color: $font-color-default;
 
 $footer-bg-color: $color-primary;
 $footer-font-color: $bg-color;
 
-$copyright-bg-color: #5C4A52;
+$copyright-bg-color: #5c4a52;
 $copyright-font-color: $bg-color;
 
 // links
@@ -55,35 +48,13 @@ $link-color-hover: desaturate(#160073, 10%);
 $link-decoration: none;
 $link-decoration-hover: none;
 
-//////////////////////////////////////////////////////////////
-// default navbar
-//////////////////////////////////////////////////////////////
-
-$navbar-bg: $color-primary;
-$navbar-link-color: $bg-color;
-$navbar-link-color-bg: $color-primary;
-$navbar-link-color-hover: $font-color-headers;
-$navbar-link-color-bg-hover: #68AFC1;
-$navbar-link-active-color: red;
-$navbar-link-active-color-bg: green;
-
-
-// layout parts
-$top-bar-bg-color: $color-grey;
-
-//////////////////////////////////////////////////////////////
 // external fonts
-//////////////////////////////////////////////////////////////
-
 @import url('https://fonts.googleapis.com/css?family=Arimo');
 
-//////////////////////////////////////////////////////////////
 // fonts
-//////////////////////////////////////////////////////////////
-
-$font-family-sans-serif: 'Arimo', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif !default;
-$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 
 $font-default: $font-family-sans-serif;
 $font-size-default: 16px;
@@ -104,37 +75,27 @@ $blocquote-decoration-border: 3px solid #ccc;
 $mark-bg: #ff0;
 $mark-color: #000;
 
-
-
-//////////////////////////////////////////////////////////////
 // Animation
-//////////////////////////////////////////////////////////////
+$transition: all .3s ease 0s;
 
-$transition: all 0.3s ease 0s;
-
-//////////////////////////////////////////////////////////////
-// Graficos
-//////////////////////////////////////////////////////////////
-
+// Grafic styles
 $border-radius: 6px; // bordes redondeados
-$text-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.25);
-$shadow-default: 1px, 1px, 3px, red;
+$text-shadow-default: 0 1px 3px rgba(0, 0, 0, .25);
+$shadow-default: 1px, 1px, 3px, rgba(0, 0, 0, .25);
 
 
-//////////////////////////////////////////////////////////////
-// Formularios
-//////////////////////////////////////////////////////////////
+// Forms
 
 // buttons
 $button-padding: 8px 20px;
 $button-padding-small: 5px 10px;
 $button-padding-big: 10px 35px;
-$button-border-color: #68AFC1;
+$button-border-color: #68afc1;
 $button-color: $font-color-default;
 $button-bg: transparent;
-$button-border-color-hover: #68AFC1;
+$button-border-color-hover: #68afc1;
 $button-color-hover: $font-color-default;
-$button-bg-hover: #68AFC1;
+$button-bg-hover: #68afc1;
 
 // buttons forms
 $button-form-padding: 5px 10px;
@@ -143,14 +104,13 @@ $button-form-bg: $button-bg;
 $button-form-color-hover: $font-color-headers;
 $button-form-bg-hover: $button-bg-hover;
 
-// colors
-
-
-
+// forms fonts
 $form-font-family: $font-default;
 $form-font-size: $font-size-default;
 $form-font-color: $font-color-default;
+$form-placeholder-color: #ccc;
 
+// forms styles
 $form-input-bg-color: #fff;
 $form-input-border-size: 1px;
 $form-input-border-radius: $border-radius;
@@ -159,23 +119,27 @@ $form-input-shadow: $shadow-default;
 $form-input-focus-shadow: #ccc;
 $form-input-focus-border-color: #ccc;
 
-$form-placeholder-color: #ccc;
-
-$form-fieldset-bg-color:#fff;
+$form-fieldset-bg-color: #fff;
 $form-fieldset-border-color: #ccc;
 
+$form-error-color: #bf0101;
+$form-success-color: #49ec67;
 
-$form-error-color: red;
-$form-success-color: green;
-
-
-
-
-
-//////////////////////////////////////////////////////////////
 // Code
-//////////////////////////////////////////////////////////////
-
 $code-font-family: $font-family-monospace;
-$code-color: red;
+$code-color: #f15c5c;
 $code-kbd-bg-color: #ccc;
+
+// layout
+
+// default navbar
+$navbar-bg: $color-primary;
+$navbar-link-color: $bg-color;
+$navbar-link-color-bg: $color-primary;
+$navbar-link-color-hover: $font-color-headers;
+$navbar-link-color-bg-hover: #68afc1;
+$navbar-link-active-color: $bg-color;
+$navbar-link-active-color-bg: darken($color-primary, 20%);
+
+// layout parts
+$top-bar-bg-color: $color-grey;
