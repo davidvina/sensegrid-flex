@@ -1,8 +1,7 @@
 @charset 'UTF-8';
 
-//
-// this must be the parent of columns
 
+/// Mixin needed for wrap columns
 /// @output Generates center container with fixed width
 /// @param {boolean} $full-width [false] - if true the container si full width
 @mixin flex-container($full-width: false) {
@@ -16,21 +15,30 @@
   width: 95%;
 }
 
+/// Mixin needed for wrap columns
+/// @output Generates center container with fixed width
+/// @param {boolean} $full-width [false] - if true the container si full width
+@mixin float-container($full-width: false) {
+  @if not $full-width {
+    max-width: $container-width;
+  }
+  margin: auto;
+  width: 95%;
+}
 
 
-// Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
-// @include col($xl, $l, $m, $, $xs);
-// $grid: permite introducir un numero de columans especifica
-// $xl:  ancho columnas para $screen-xl
-// $l:   ancho para $screen-l
-// $m:   para $screen-m
-// $s:   para $screen-s
-// $xs:  para $screen-xs
-//
-// ejemplo uso:
-// @include col($xl:3, $l:3);
-//
-// si no se incluye el parametro el valor de ancho sera 100%
+/// Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
+/// @param {number} $grid [$grid-default] - el número de columnas que tendra la columna
+/// @param {number} $xl [$grid] - el ancho en columnas que tendra $screen-xl
+/// @param {number} $l [$grid] - el ancho en columnas que tendra $screen-l
+/// @param {number} $m [$grid] - el ancho en columnas que tendra $screen-m
+/// @param {number} $s [$grid] - el ancho en columnas que tendra $screen-s
+/// @param {number} $xs [$grid] - el ancho en columnas que tendra $screen-xs
+/// @example
+///   .sidebar{
+///    @include col($m:3);
+///  }
+/// si no se incluye el parametro el valor de ancho sera 100%
 @mixin col(
   $grid: $grid-default,
   $xl: $grid,
