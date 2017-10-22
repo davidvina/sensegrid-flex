@@ -1,13 +1,14 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
+// Functions
 // calculate rem
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
+@function px-rem($size) {
+  $rem-size: $size / 16px;
+  @return $rem-size * 1rem;
 }
 
 @mixin font-size($size) {
-  font-size: calculateRem($size);
+  font-size: px-rem($size);
 }
 
 
@@ -17,86 +18,90 @@
 }
 
 // images
-
-@mixin img-responsive(){
+@mixin img-responsive {
   width: 100%;
   height: auto;
 }
 
 // bordes redondeados
 
-@mixin border-radius($radius: 6px){
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
+@mixin border-radius($radius: 6px) {
   border-radius: $radius;
 }
 
 // mixin sombras
 @mixin box-shadow($value) {
-    -webkit-box-shadow:$value;
-    -moz-box-shadow:$value;
-    box-shadow:$value;
+  box-shadow: $value;
 }
 
 
 
 // sombras de texto
-
 @mixin text-shadow ($shadow: $text-shadow-default) {
-	text-shadow: $shadow;
+  text-shadow: $shadow;
 }
 
 
 // box-sizing
-
-@mixin box-sizing($value: border-box){
--webkit-box-sizing: $value;
--moz-box-sizing: $value;
-box-sizing: $value;
+@mixin box-sizing($value: border-box) {
+  box-sizing: $value;
 }
 
 
 // placeholder
-
 @mixin placeholder {
   .placeholder {
-      @content;
-  }
-  :-moz-placeholder {
     @content;
   }
   ::-moz-placeholder {
     @content;
   }
-  ::-webkit-input-placeholder {
-    @content;
-  }
 }
 
-// navigation menus
 
-// menu de navegacion horizontal
-@mixin nav-hor ($align: left, $reset: false){
+/// Converts default lists in a horizontal lists
+/// @param {string} $align ['left'] - text-align values: left, right, justify
+///
+/// @group Mixins
+///
+/// @example scss
+/// .menu{
+///   @include list-hor(left);
+/// }
+///
+/// @example css
+/// .menu {
+///   text-align: left;
+///   padding: 0;
+///   font-size: 0;
+/// }
+/// .menu li {
+///   display: inline-block;
+///   list-style: none;
+///   margin: 0;
+/// }
+/// .menu li a {
+///   display: inline-block;
+///   font-size: 16px;
+///  }
+@mixin list-hor($align: left) {
+  & {
+    text-align: $align;
+    padding: 0;
+    font-size: 0;
 
-	text-align: $align;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
 
-	.list-heading, ul, li{
-		display: inline-block;
-	}
+      a {
+        display: inline-block;
+        font-size: $font-size-default;
+      }
+    }
+  }
 
-	ul, li{
-		@if $reset{
-			margin: 0;
-		}
-	}
-
-	li{
-		list-style: none;
-	}
-
-	a {
-		display: inline-block;
-	}
 }
 
 
@@ -219,7 +224,6 @@ box-sizing: $value;
 
 // buttons
 @mixin button(){
-  //font-size: $font-size;
   text-align: center;
   display: inline-block;
   padding: $button-padding;

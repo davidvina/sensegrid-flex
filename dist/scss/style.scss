@@ -1,0 +1,12 @@
+// sample style using sesnegrid
+@import 'sensegrid';
+
+.container {
+  @include container;
+}
+
+.main-navigation {
+  .menu {
+    @include list-hor;
+  }
+}

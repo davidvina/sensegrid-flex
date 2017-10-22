@@ -2,6 +2,7 @@
 
 
 /// Mixin needed for wrap columns
+/// @group Grid
 /// @output Generates center container with fixed width
 /// @param {boolean} $full-width [false] - if true the container si full width
 @mixin flex-container($full-width: false) {
@@ -16,6 +17,7 @@
 }
 
 /// Mixin needed for wrap columns
+/// @group Grid
 /// @output Generates center container with fixed width
 /// @param {boolean} $full-width [false] - if true the container si full width
 @mixin float-container($full-width: false) {
