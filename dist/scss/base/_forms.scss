@@ -1,202 +1,108 @@
-@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+@charset 'UTF-8';
 
+//necessari per poder utilitzar accentes i caràcters especials
 
 @include placeholder {
-	color: $form-placeholder-color;
-	font-style: italic;
+  color: $form-placeholder-color;
+  font-style: italic;
 }
 
-fieldset{
-	border: none;
-	background-color: $form-fieldset-bg-color;
-	border-top: 1px solid $form-fieldset-border-color;
-	border-bottom: 1px solid $form-fieldset-border-color;
-	margin: 20px 0;
-	padding: 10px 10px;
-	position: relative;
+
+fieldset {
+  border: 0;
+  background-color: $form-fieldset-bg-color;
+  border-top: 1px solid $form-fieldset-border-color;
+  border-bottom: 1px solid $form-fieldset-border-color;
+  margin: 20px 0;
+  padding: 10px;
+  position: relative;
 }
 
-fieldset legend{
-	text-transform: uppercase;
-	float: left;
-	width: 100%;
-	color: $font-color-headers;
-	margin-bottom: 10px;
+fieldset legend {
+  text-transform: uppercase;
+  float: left;
+  width: 100%;
+  color: $font-color-headers;
+  margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='text'],
+input[type='password'],
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 textarea,
 keygen,
 datalist,
-output{
-	@include transition(all 0.30s ease-in-out);
-	background-color: $form-input-bg-color;
-	font-family: $form-font-family;
-	font-size: $form-font-size;
-	color: $form-font-color;
-	outline: none;
-	padding: 5px 10px;
-	margin: 5px 1px 3px 0;
-	border: $form-input-border-size solid $form-input-border-color;
-	@include box-shadow($form-input-shadow);
-	@include border-radius($form-input-border-radius);
-	@include box-sizing();
-	width: 100%;
+output {
+  @include transition(all .3s ease-in-out);
+
+  background-color: $form-input-bg-color;
+  font-family: $form-font-family;
+  font-size: $form-font-size;
+  color: $form-font-color;
+  outline: none;
+  padding: 5px 10px;
+  margin: 5px 1px 3px 0;
+  border: $form-input-border-size solid $form-input-border-color;
+
+  @include box-shadow($form-input-shadow);
+  @include border-radius($form-input-border-radius);
+  @include box-sizing;
+
+  width: 100%;
+
+  &:focus {
+    @include box-shadow($form-input-focus-shadow);
+    border: $form-input-border-size solid $form-input-focus-border-color;
+  }
+
+  // element disable
+  &:disabled {
+    color: lighten($button-color, 30%);
+    background-color: lighten($button-bg, 20%);
+    @include box-shadow(0 0 5px lighten($form-input-border-color, 20%) inset);
+    border: $form-input-border-size solid lighten($form-input-border-color, 20%);
+  }
 }
 
-select{
-	padding: 4px 10px;
-}
-
-
-
-/*
-foco en elemento formulario
-*/
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="color"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="email"]:focus,
-input[type="month"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-input[type="week"]:focus,
-textarea:focus,
-select:focus,
-keygen:focus,
-datalist:focus,
-output:focus{
-	@include box-shadow($form-input-focus-shadow);
-	border: $form-input-border-size solid $form-input-focus-border-color;
+select {
+  padding: 4px 10px;
 }
 
 
-/*
-foco en elemento disabled
-*/
+// buttons
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button {
+  @include button;
 
-input[type="text"]:disabled,
-input[type="password"]:disabled,
-input[type="color"]:disabled,
-input[type="date"]:disabled,
-input[type="datetime"]:disabled,
-input[type="datetime-local"]:disabled,
-input[type="email"]:disabled,
-input[type="month"]:disabled,
-input[type="number"]:disabled,
-input[type="search"]:disabled,
-input[type="tel"]:disabled,
-input[type="time"]:disabled,
-input[type="url"]:disabled,
-input[type="week"]:disabled,
-textarea:disabled,
-select:disabled,
-keygen:disabled,
-datalist:disabled,
-output:disabled{
-	color: lighten( $button-color, 30% );
-	background-color: lighten( $button-bg, 20% );
-	@include box-shadow(0 0 5px lighten($form-input-border-color, 20%) inset);
-	border: $form-input-border-size solid lighten( $form-input-border-color, 20% );
-}
+  // active button
+  &:active {
+    @include box-shadow(inset 0 0 3px $form-error-color);
+    background-color: $form-error-color;
+  }
 
+  &:disabled {
+    cursor: default;
+    color: lighten($button-color, 30%);
+    background-color: lighten($button-bg, 30%);
+    border: $form-input-border-size solid lighten($button-border-color, 30%);
 
-
-.form-group{
-	margin: 10px 0;
-}
-
-/*
-	botones
-*/
-
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-button{
-	@include button();
-}
-
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button:active{
-	@include box-shadow(inset 0 0 3px red);
-	background-color: red;
-}
-
-
-input[type="button"]:disabled,
-input[type="submit"]:disabled,
-input[type="reset"]:disabled,
-button:disabled{
-  cursor: default;
-	color: lighten( $button-color, 30% );
-	background-color: lighten( $button-bg, 30% );
-	border: $form-input-border-size solid lighten( $button-border-color, 30% );
-
-	&:hover{
-		color: lighten( $button-color, 30% );
-		background-color: lighten( $button-bg, 30% );
-		border: $form-input-border-size solid lighten( $button-border-color, 30% );
-	}
-}
-
-
-
-
-
-
-/*
-	Missatges de validació
-*/
-
-label.error{
-	display: block;
-	color: $form-error-color;
-	font-style: italic;
-	font-size: 0.8em;
-	margin-left: 25%;
-	padding-left: 5px;
-
-}
-
-
-input.error,
-select.error,
-textarea.error{
-	border-color: darken($form-error-color, 20%);
-	box-shadow: 0 1px 1px rgba(250, 0, 0, 0.075) inset, 0 0 5px $form-error-color;
-}
-
-
-/*
-	Camps amb dades correctes
-*/
-
-input.valid,
-select.valid,
-textarea.valid{
-	border-color: darken($form-success-color, 20%);
-	box-shadow: 0 1px 1px rgba(250, 0, 0, 0.075) inset, 0 0 5px $form-success-color;
+    &:hover {
+      color: lighten($button-color, 30%);
+      background-color: lighten($button-bg, 30%);
+      border: $form-input-border-size solid lighten($button-border-color, 30%);
+    }
+  }
 }

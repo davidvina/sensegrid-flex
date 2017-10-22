@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-/* Regla necesaria para que el sistema de regillas funciona
-   con esta regla la declaració with*/
+// Regla necesaria para que el sistema de regillas funciona
+// con esta regla la declaració with
 *,
 *:before,
 *:after {
@@ -9,16 +9,15 @@
 }
 
 
-
-
 blockquote, q {
-	quotes: none;
+	quotes: '';
 }
 
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	//content: '';
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
 	content: none;
 }
 

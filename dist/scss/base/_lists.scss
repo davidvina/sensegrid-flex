@@ -1,43 +1,34 @@
-@charset "UTF-8"; //necessari per poder utilitzar accentes i caràcters especials
+@charset 'UTF-8';
 
-
-$list-margin: 10px 0px;
-$list-dd-margin: 10px 0px 20px;
-
-dl, dt, dd, ol, ul, li {
-	margin: $list-margin;
-	padding: 0;
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+  margin: $list-margin;
+  padding: 0;
 }
 
+dl {
+  margin: $text-block-margin;
 
-dl{
-	dt{
-		font-weight: bold;
-	}
+  dt {
+    font-weight: bold;
+  }
 
-	dd{
-		margin: $list-dd-margin;
-	}
-
-	margin: $text-block-margin;
+  dd {
+    margin: $list-dd-margin;
+  }
 }
 
+ul,
+ol {
+  list-style-position: inside;
 
-ul, ol{
-	list-style-position: inside;
-
-	li{
-		li{
-			margin-left: 20px;
-		}
-	}
-}
-
-
-.inline-list{
-
-}
-
-.alpha-list{
-
+  li {
+    li {
+      margin-left: 20px;
+    }
+  }
 }

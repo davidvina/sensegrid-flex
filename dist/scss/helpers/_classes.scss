@@ -55,3 +55,59 @@
 .button {
   @include button;
 }
+
+
+// forms helpers
+// errrors
+label.error {
+  display: block;
+  color: $form-error-color;
+  font-style: italic;
+  font-size: .8em;
+  margin-left: 25%;
+  padding-left: 5px;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: darken($form-error-color, 20%);
+  box-shadow: 0 1px 1px rgba(250, 0, 0, .075) inset, 0 0 5px $form-error-color;
+}
+
+// valid
+input.valid,
+select.valid,
+textarea.valid {
+  border-color: darken($form-success-color, 20%);
+  box-shadow: 0 1px 1px rgba(250, 0, 0, .075) inset, 0 0 5px $form-success-color;
+}
+
+//
+.form-group {
+  margin: 10px 0;
+}
+
+// table classes
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: 2 * $table-border-width;
+    }
+  }
+}
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: darken($table-bg-color, 10%);
+  }
+}

@@ -130,6 +130,18 @@ $code-font-family: $font-family-monospace;
 $code-color: #f15c5c;
 $code-kbd-bg-color: #ccc;
 
+// lists
+$list-margin: 10px 0;
+$list-dd-margin: 10px 0 20px;
+
+// tables
+$table-border-color: #ccc;
+$table-border-width: 1px;
+$table-align: top;
+$table-justify: left;
+$table-cell-padding: 10px;
+$table-bg-color: $bg-color;
+
 // layout
 
 // default navbar
