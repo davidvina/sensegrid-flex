@@ -65,3 +65,22 @@ function showMediaQueries() {
     return 'Hide media query breackpoints';
   }
 };
+
+function navigationBar(selectorCss, options) {
+  var options = options || {};
+  var carets = options.carets || true;
+
+  var navigationMenu = document.querySelector(selectorCss + ' ul');
+  if (options.carets != true) {
+    alert('hola');
+  }
+
+  return navigationMenu;
+
+}
+
+(function () {
+  this.hola = function () {
+    alert('hola');
+  };
+});

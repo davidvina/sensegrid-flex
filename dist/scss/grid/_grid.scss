@@ -46,6 +46,12 @@
   }
 }
 
+@mixin breackpoint {
+  @media only screen and (min-width: $breackpoint) {
+    @content;
+  }
+}
+
 // Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
 // @include col($xl, $l, $m, $, $xs);
 // $grid: permite introducir un numero de columans especifica
