@@ -1,0 +1,36 @@
+// breackpoints mediaqueries
+@mixin screen-xl {
+	@media only screen and (min-width: $screen-xl) {
+		@content;
+	}
+}
+
+@mixin screen-l {
+	@media only screen and (min-width: $screen-l) {
+		@content;
+	}
+}
+
+@mixin screen-m {
+	@media only screen and (min-width: $screen-m) {
+		@content;
+	}
+}
+
+@mixin screen-s {
+	@media only screen and (min-width: $screen-s) {
+		@content;
+	}
+}
+
+@mixin screen-xs {
+	@media only screen and (min-width: $screen-xs) {
+		@content;
+	}
+}
+
+@mixin breackpoint {
+	@media only screen and (min-width: $breackpoint) {
+		@content;
+	}
+}

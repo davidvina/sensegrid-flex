@@ -5,13 +5,10 @@
 /// @group Grid
 /// @output Generates center container with fixed width
 /// @param {boolean} $full-width [false] - if true the container si full width
-@mixin flex-container($full-width: false) {
+@mixin container($full-width: false) {
   @if not $full-width {
     max-width: $container-width;
   }
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin: auto;
   width: 95%;
 }
@@ -20,10 +17,13 @@
 /// @group Grid
 /// @output Generates center container with fixed width
 /// @param {boolean} $full-width [false] - if true the container si full width
-@mixin float-container($full-width: false) {
+@mixin flex-container($full-width: false) {
   @if not $full-width {
     max-width: $container-width;
   }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
   width: 95%;
 }
@@ -51,11 +51,11 @@
   $padding: true) {
   //
   $width: percentage($xs / $grid);
-
   position: relative;
+  box-sizing: border-box;
+  
 
   @if $xs != $grid {
-    float: left;
     width: percentage($xs / $grid);
   } @else {
     // configuracio per defecte per dispositius mòvils
@@ -69,28 +69,24 @@
   // només es crea la mediaquery si es diferent de 100% de l'ample
   @if $s != $grid {
     @media only screen and (min-width: $screen-s) {
-      float: left;
       width: percentage($s / $grid);
     }
   }
 
   @if $m != $grid {
     @media only screen and (min-width: $screen-m) {
-      float: left;
       width: percentage($m / $grid);
     }
   }
 
   @if $l != $grid {
     @media only screen and (min-width: $screen-l) {
-      float: left;
       width: percentage($l / $grid);
     }
   }
 
   @if $xl != $grid {
     @media only screen and (min-width: $screen-xl) {
-      float: left;
       width: percentage($xl / $grid);
     }
   }

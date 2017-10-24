@@ -8,9 +8,13 @@
 ////
 
 @import 'normalize/normalize';      // normalize fils reset styles
-@import 'variables';               // variable folder override for custom
-@import 'grid/grid';               // grid sysytem
+//@import 'variables';               // variable folder override for custom
+
+@import 'grid/media-queries';          // grid sysytem
+@import 'grid/grid-float';               // grid sysytem
 @import 'grid/grid-flex';          // grid sysytem
+
+
 @import 'mixins/mixins';           // patrones reutilizables por las reglas
 @import 'base/base';               // basic styles
 @import 'helpers/classes';         // helpers
