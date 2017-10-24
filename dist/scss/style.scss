@@ -1,5 +1,6 @@
 // sample style using sesnegrid
-@import 'sensegrid';
+@import "variables";
+@import "sensegrid";
 
 .container {
   @include container;
@@ -7,6 +8,49 @@
 
 .main-navigation {
   .menu {
-    @include nav-bar;
+    @include nav-bar(left);
+  }
+}
+
+.container-articles {
+  @include flex-container;
+
+  .item {
+    @include col($m: 6);
+
+    display: flex;
+    flex-direction: column;
+
+    .image {
+      position: relative;
+      width: 100%;
+      padding-bottom: 40%;
+      overflow: hidden;
+
+      img {
+        // centra objeto respecto padre
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include img-responsive;
+      }
+    }
+
+    .title {
+      font-size: 3rem;
+      line-height: 3.2rem;
+      order: -1;
+
+      // importante cambia orden
+      height: 120px;
+      margin-bottom: 20px;
+
+      // permite alinear el texto en vertical
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
   }
 }

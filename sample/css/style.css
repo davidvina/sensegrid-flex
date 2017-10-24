@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo");
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
    ========================================================================== */
@@ -6,7 +7,6 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Arimo");
 html {
   line-height: 1.15;
   /* 1 */
@@ -537,14 +537,6 @@ ol {
   ol li li {
     margin-left: 20px; }
 
-.placeholder {
-  color: #ccc;
-  font-style: italic; }
-
-::-moz-placeholder {
-  color: #ccc;
-  font-style: italic; }
-
 fieldset {
   border: 0;
   background-color: #fff;
@@ -851,20 +843,14 @@ body.show-media-queries::before {
       background-color: #d43e3e; } }
 
 .container {
-  clear: both;
-  margin: auto;
   max-width: 1380px;
+  margin: auto;
   width: 95%; }
-  .container::after {
-    clear: both;
-    content: '';
-    display: block; }
 
 .main-navigation .menu,
 .main-navigation .menu ul {
   display: block;
   font-size: 0;
-  text-align: left;
   margin: 0; }
   .main-navigation .menu li,
   .main-navigation .menu ul li {
@@ -875,7 +861,8 @@ body.show-media-queries::before {
     .main-navigation .menu li ul,
     .main-navigation .menu ul li ul {
       display: none;
-      width: auto; }
+      width: auto;
+      float: none; }
     .main-navigation .menu li:hover ul,
     .main-navigation .menu ul li:hover ul {
       display: block; }
@@ -887,6 +874,7 @@ body.show-media-queries::before {
         .main-navigation .menu ul li ul {
           width: auto;
           position: absolute;
+          float: none;
           min-width: 160px; }
           .main-navigation .menu li ul li,
           .main-navigation .menu ul li ul li {
@@ -895,7 +883,7 @@ body.show-media-queries::before {
 
 .main-navigation .menu a {
   display: block;
-  padding: 0px 15px;
+  padding: 0 15px;
   color: #f5f4f4;
   background-color: #ff6b5a;
   border-bottom: 1px solid white;
@@ -911,5 +899,49 @@ body.show-media-queries::before {
     .main-navigation .menu a {
       border: 0;
       border-right: 1px solid white; } }
+
+.main-navigation .menu:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.container-articles {
+  max-width: 1380px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 95%; }
+  .container-articles .item {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column; }
+    @media only screen and (min-width: 768px) {
+      .container-articles .item {
+        width: 50%; } }
+    .container-articles .item .image {
+      position: relative;
+      width: 100%;
+      padding-bottom: 40%;
+      overflow: hidden; }
+      .container-articles .item .image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto; }
+    .container-articles .item .title {
+      font-size: 3rem;
+      line-height: 3.2rem;
+      order: -1;
+      height: 120px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
 
 /*# sourceMappingURL=style.css.map */

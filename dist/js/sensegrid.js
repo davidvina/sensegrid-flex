@@ -83,4 +83,4 @@ function navigationBar(selectorCss, options) {
   this.hola = function () {
     alert('hola');
   };
-});
+})();
