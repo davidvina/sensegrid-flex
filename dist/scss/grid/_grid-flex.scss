@@ -29,6 +29,12 @@
 }
 
 
+@mixin row() {
+  margin-left: -$gutter-hor;
+  margin-right: -$gutter-hor;
+}
+
+
 /// Mixin que controla ancho de las columnas seguns la medida de la ventana del navegador.
 /// @param {number} $grid [$grid-default] - el número de columnas que tendra la columna
 /// @param {number} $xl [$grid] - el ancho en columnas que tendra $screen-xl

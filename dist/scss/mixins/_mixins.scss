@@ -52,6 +52,27 @@
   box-sizing: $value;
 }
 
+/// Aspect-ratio for image containers
+@mixin aspect-ratio($ratioX, $ratioY){
+  position: relative;
+  height: 0px;
+  width: 100%;
+  padding-bottom: percentage($ratioY / $ratioX);
+  overflow: hidden;
+  
+  img{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    height: auto;
+    width: 100%;
+  }
+}
+
+
 // placeholder
 // @mixin placeholder {
 //   .placeholder {
