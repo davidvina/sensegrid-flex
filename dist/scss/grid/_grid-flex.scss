@@ -28,6 +28,12 @@
   width: 95%;
 }
 
+@mixin flex-wrap(){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
 @mixin row() {
   margin-left: -$gutter-hor;
@@ -59,17 +65,17 @@
   $width: percentage($xs / $grid);
   position: relative;
   box-sizing: border-box;
-
-  @if $xs != $grid {
-    width: percentage($xs / $grid);
-  } @else {
-    // configuracio per defecte per dispositius mòvils
-    width: $width;
-  }
-
+  
   @if $padding == true {
     padding: $gutter-ver $gutter-hor;
   }
+  
+  //@if $xs != $grid {
+  //  width: percentage($xs / $grid);
+  //} @else {
+    // configuracio per defecte per dispositius mòvils
+    width: $width;
+  //}
 
   // només es crea la mediaquery si es diferent de 100% de l'ample
   @if $s != $grid {
