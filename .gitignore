@@ -9,3 +9,5 @@ Icon
 # PhpStorm
 .idea
 
+node_modules/
+
